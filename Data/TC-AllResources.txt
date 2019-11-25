@@ -1,0 +1,560 @@
+TCs: All-Resources
+
+A1
+call setup 
+call teardown
+call GET getClosedIssiues
+call POST githubWebhookListener
+call GET getOpenIssues
+
+A2
+call POST CreateUser
+call GET GetMe
+call GET GetUser
+call GET ListUsers
+call POST CreateChat
+call GET ListChats
+call POST AttachConnectPolicy
+call POST AttachPublicPublishPolicy
+call POST AttachpublicSubscribePolicy
+call POST AttachPubicReceiverPolicy
+call AutoConfirmUser
+
+A3
+call POST create
+call GET getClosedIssiues
+call GET getClosedIssiues
+call PUT update
+call DELETE delete
+call POST billing
+
+A4
+call GET getMessages
+call DELE deleteUser 
+call GET getOnlineUser
+call GET getUser
+call PUT updateUserActivity
+call createUser
+call POST sendGroupMessage
+call GET getChats
+call POST acceptInvite
+call GET getInvites
+call GET sendInvite
+call DELET deleteChats
+call POST sendMessage
+
+A5
+call GET listResource
+call POST createResource
+call GET resolveResource
+call DELETE deleteResource
+
+A6
+call POST getFormEntries
+call POST deleteFormEntries
+call auth
+call POST getForms
+call POST updateFormSettings
+call POST handleFormEntry
+
+A7
+call POST uploadImage
+call GET getImage
+
+A8
+call s3
+call processor
+call POST http
+
+A9
+call Trigger-backup
+
+A10
+call POST create
+call GET list
+call DELETE delete
+call POST register
+call POST login
+call auth
+
+TCs: All-resource-relations. TCs finish!
+A1
+call setup 
+call teardown
+call GET getClosedIssiues
+call POST githubWebhookListener
+call GET getOpenIssues
+
+A2
+call POST CreateUser
+call GET GetMe
+call GET GetUser
+call GET ListUsers
+call POST CreateChat
+call GET ListChats
+call POST AttachConnectPolicy
+call POST AttachPublicPublishPolicy
+call POST AttachpublicSubscribePolicy
+call POST AttachPubicReceiverPolicy
+call AutoConfirmUser
+
+A3
+call POST create
+call GET getClosedIssiues
+call GET getClosedIssiues
+call PUT update
+call DELETE delete
+call POST billing
+
+A4
+call GET getMessages
+call DELE deleteUser 
+call GET getOnlineUser
+call GET getUser
+call PUT updateUserActivity
+call createUser
+call POST sendGroupMessage
+call GET getChats
+call POST acceptInvite
+call GET getInvites
+call GET sendInvite
+call DELET deleteChats
+call POST sendMessage
+
+A5
+call GET listResource
+call POST createResource
+call GET resolveResource
+call DELETE deleteResource
+
+A6
+call POST getFormEntries
+call POST deleteFormEntries
+call auth
+call POST getForms
+call POST updateFormSettings
+call POST handleFormEntry
+
+A7
+call POST uploadImage
+call GET getImage
+
+A8
+call s3
+call processor
+call POST http
+
+A9
+call Trigger-backup
+
+A10
+call POST create
+call GET list
+call DELETE delete
+call POST register
+call POST login
+call auth
+
+
+TCs All-Resources-Def
+A1
+call teardown call GET getOpenIssues
+call teardown call GET getClosedIssiues
+call POST githubWebhookListener call GET getClosedIssiues
+call POST githubWebhookListener call
+call setup call GET getOpenIssues
+
+
+A2
+call POST CreateUser call GET GetMe
+call POST CreateChat call GET ListChats
+
+A3
+call POST create call GET get
+call PUT update call GET get
+call DELETE delete call Get get
+
+A4
+call POST sendMessage call GET getMessages
+call DELETE deleteUser call GET getMessages
+call DELETE deleteChats call GET getMessages
+
+call DELETE deleteUser call GET getChats
+call DELETE deleteChats call GET getChats
+call POST sendMessage call GET getChats
+call POST acceptInvite call GET getChats
+
+call DELETE deleteUser call GET getOnlineUser
+call PUT updateUserActivity GET getOnlineUser
+call createUser GET getOnlineUser
+call POST acceptInvite GET getOnlineUser
+call GET sendInvite GET getOnlineUser
+call DELETE deleteChats GET getOnlineUser
+call DELETE deleteUser call GET getOnlineUser
+call POST acceptInvite GET getOnlineUser
+
+A5
+call POST createResource call GET listResource
+call DELETE deleteResource call GET listResource
+
+A6
+call POST deleteFormEntriescall call POST getFormEntries
+call POST handleFormEntry call POST getFormEntries
+call POST deleteFormEntries call POST getForms
+Call POST updateFormSettings call POST getForms
+call POST handleFormEntry call POST getForms
+
+A7
+call POST uploadImage call GET getImage
+call resizeImage call GET getImage
+call GET getImage
+
+A8
+call s3 call s3
+call processor call s3
+call http call processor
+call processor call processor
+call s3 call s3
+
+A9
+call Trigger-backup call Backupchannel
+call Backupchannel call Backupchannel (checks dynamotable)
+call Backupchannel call Backupchannel (checks queue)
+
+A10
+call POST register call Post login
+
+TCs All-Resources-Use
+A1
+call teardown call getOpenIssues
+call teardown call getClosedIssiues
+call githubWebhookListener call getClosedIssiues
+call githubWebhookListener call
+call setup call getOpenIssues
+
+A2
+call POST CreateUser call GET GetMe
+call POST CreateUser call GET GetUser
+call POST CreateUser call GET GetUsers
+
+call POST CreateChat call GET ListChats
+call POST CreateChat call POST CreateChat
+
+A3
+call POST create call GET get
+call PUT update call GET get
+call DELETE delete call Get get
+call POST create call GET list
+call PUT update call GET list
+call DELETE delete call Get list
+
+A4
+call POST sendMessage call GET getMessages
+call DELETE deleteUser call GET getMessages
+call DELETE deleteChats call GET getMessages
+call DELETE deleteUser call GET getChats
+call DELETE deleteChats call GET getChats
+call POST sendMessage call GET getChats
+call POST acceptInvite call GET getChats
+call DELETE deleteUser call GET getOnlineUser
+call PUT updateUserActivity call GET getOnlineUser
+call createUser GET call getOnlineUser
+call POST acceptInvite call GET getOnlineUser
+call GET sendInvite call GET getOnlineUser
+call DELETE deleteChats call GET getOnlineUser
+call DELETE deleteUser call GET getOnlineUser
+call POST acceptInvite call GET getOnlineUser
+call PUT updateUserActivity call GET getUser
+call createUser call GET getUser
+call POST acceptInvite call GET getUser
+call GET sendInvite call GET getUser
+call DELETE deleteChats call GET getUser
+call DELETE deleteUser call GET getUser
+call POST acceptInvite call GET getUser
+call PUT updateUserActivity call POST sendGroupMessage
+call createUser call POST sendGroupMessage
+call POST acceptInvite call POST sendGroupMessage
+call GET sendInvite call POST sendGroupMessage
+call DELETE deleteChats call POST sendGroupMessage
+call DELETE deleteUser call call POST sendGroupMessage
+call POST acceptInvite call POST sendGroupMessage
+call PUT updateUserActivity call GET getChats
+call createUser  GET getChats
+call POST acceptInvite  GET getChats
+call GET sendInvite  GET getChats
+call DELETE deleteChats  GET getChats
+call DELETE deleteUser call  GET getChats
+call POST acceptInvite  GET getChats
+call PUT updateUserActivity call POST acceptInvite
+call createUser call POST acceptInvite
+call POST acceptInvite call POST acceptInvite
+call GET sendInvite call POST acceptInvite
+call DELETE deleteChats call POST acceptInvite
+call DELETE deleteUser call call POST acceptInvite
+call POST acceptInvite call POST acceptInvite
+call PUT updateUserActivity call GET getInvites
+call createUser call GET getInvites
+call POST acceptInvite call GET getInvites
+call GET sendInvite call GET getInvites
+call DELETE deleteChats call GET getInvites
+call DELETE deleteUser call call GET getInvites
+call POST acceptInvite call GET getInvites
+call PUT updateUserActivity call GET sendInvite
+call createUser call GET sendInvite
+call POST acceptInvite call GET sendInvite 
+call GET sendInvite call GET sendInvite 
+call DELETE deleteChats call GET sendInvite 
+call DELETE deleteUser call call GET sendInvite 
+call POST acceptInvite call GET sendInvite 
+call PUT updateUserActivity call DELETE deleteUser
+call createUser call DELETE deleteUser 
+call POST acceptInvite call DELETE deleteUser
+call GET sendInvite call DELETE deleteUser
+call DELETE deleteChats call DELETE deleteUser
+call DELETE deleteUser call call DELETE deleteUser
+call POST acceptInvite call DELETE deleteUser
+
+A5
+call POST createResource call GET listResource
+call DELETE deleteResource call GET listResource
+call POST createResource call GET resolveResource
+call DELETE deleteResource call GET resolveResource
+
+A6
+call POST deleteFormEntriescall call POST getFormEntries
+call POST handleFormEntry call POST getFormEntries
+call POST deleteFormEntries call POST getForms
+Call POST updateFormSettings call POST getForms
+call POST handleFormEntry call POST getForms
+
+A7
+call POST uploadImage call GET getImage
+call resizeImage call GET getImage
+call GET getImage
+
+A8
+call s3 call s3
+call processor call s3
+call http call processor
+call processor call processor
+call s3 call s3
+
+A9
+call Trigger-backup call Backupchannel
+call Backupchannel call Backupchannel (checks dynamotable)
+call Backupchannel call Backupchannel (checks queue)
+
+
+A10
+call POST register call Post login
+
+
+Hot Spots
+
+A1
+call setup_0 call setup_1 
+call setup_1 call setup_0 
+call teardown_0 call teardown_1 OpenItemsTable
+call teardown_1 call teardown_0 OpenItemsTable
+call teardown_0 call teardown_1 ClosedItemsTable
+call teardown_1 call teardown_0 ClosedItemsTable
+call POST githubWebhookListener_0 call POST githubWebhookListener_1 ClosedItemsTable
+call POST githubWebhookListener_1 call POST githubWebhookListener_0 ClosedItemsTable
+call POST githubWebhookListener_0 call POST githubWebhookListener_1 ClosedItemsTable
+call POST githubWebhookListener_1 call POST githubWebhookListener_0 ClosedItemsTable
+call setup call teardown
+call teardown call setup
+call teardown call POST githubWebhookListener
+call POST githubWebhookListener call teardown
+call POST githubWebhookListener call setup
+call call setup POST githubWebhookListener 
+call teardown call POST githubWebhookListener
+call POST githubWebhookListener call teardown
+
+A2
+call POST CreateUser_0 call POST CreateUser_1
+call POST CreateUser_1 call POST CreateUser_0
+call POST CreateChat_0 call POST CreateChat_1
+call POST CreateChat_1 call POST CreateChat_0
+
+A3
+call POST create_0 call POST create_1
+call POST create_1 call POST create_0
+call PUT update_1 call PUT update_0
+call PUT update_0 call PUT update_1
+call DELETE delete_0 call DELETE delete_1
+call DELETE delete_1 call DELETE delete_0
+call DELETE delete call POST create
+call POST create call DELETE delete
+call DELETE delete call PUT update
+call PUT update call DELETE delete
+call POST create call PUT update
+call PUT update call POST create
+
+A4
+call DELETE deleteUser_0 call DELETE deleteUser_1 (checks MessagesTable)
+call DELETE deleteUser_1 call DELETE deleteUser_0 (checks MessagesTable)
+call DELETE deleteUser_0 call DELETE deleteUser_1 (checks ChatsTable)
+call DELETE deleteUser_1 call DELETE deleteUser_0 (checks ChatsTable)
+call DELETE deleteUser_0 call DELETE deleteUser_1 (checks UsersTable)
+call DELETE deleteUser_1 call DELETE deleteUser_0 (checks UsersTable)
+call DELETE deleteUser_2 call DELETE deleteUser_3 (checks UsersTable)
+call DELETE deleteUser_3 call DELETE deleteUser_2 (checks UsersTable)
+call PUT updateUserActivity_0 call PUT updateUserActivity_1
+call PUT updateUserActivity_1 call PUT updateUserActivity_0
+call createUser_0 call createUser_1
+call createUser_1 call createUser_0
+call POST acceptInvite_0 call POST acceptInvite_1 (checks UsersTable)
+call POST acceptInvite_1 call POST acceptInvite_0 (checks UsersTable)
+call POST acceptInvite_2 call POST acceptInvite_3 (checks UsersTable)
+call POST acceptInvite_3 call POST acceptInvite_2 (checks UsersTable)
+call GET sendInvite_0 call GET sendInvite_1
+call GET sendInvite_1 call GET sendInvite_0
+call DELETE deleteChats_0 call DELETE deleteChats_1 (checks UsersTable)
+call DELETE deleteChats_1 call DELETE deleteChats_0 (checks UsersTable)
+call DELETE deleteChats_0 call DELETE deleteChats_1 (checks ChatsTable)
+call DELETE deleteChats_1 call DELETE deleteChats_0 (checks ChatsTable)
+call DELETE deleteChats_0 call DELETE deleteChats_1 (checks MessagesTable)
+call DELETE deleteChats_1 call DELETE deleteChats_0 (checks MessagesTable)
+call POST sendMessage_0 call POST sendMessage_1 (checks MessagesTable)
+call POST sendMessage_1 call POST sendMessage_0 (checks MessagesTable)
+call POST sendMessage_0 call POST sendMessage_1 (checks ChatsTable)
+call POST sendMessage_1 call POST sendMessage_0 (checks ChatsTable)
+call DELETE deleteUser call DELETE deleteChats
+call DELETE deleteChats call DELETE deleteUser
+call DELETE deleteUser call POST sendMessage
+call POST sendMessage call DELETE deleteUser
+call DELETE deleteChats call POST sendMessage
+call POST sendMessagecall DELETE deleteChats
+call DELETE deleteUser call POST acceptInvite
+call POST acceptInvite call DELETE deleteUser
+call DELETE deleteUser call DELETE deleteChats
+call DELETE deleteChats call DELETE deleteUser
+call DELETE deleteUser call POST sendMessage
+call POST sendMessage call DELETE deleteUser
+call POST acceptInvite call DELETE deleteChats
+call DELETE deleteChats call POST acceptInvite
+call POST acceptInvite call POST sendMessage
+call POST sendMessage call POST acceptInvite
+call POST sendMessage call DELETE deleteChats
+call DELETE deleteChats call POST sendMessage
+call DELETE deleteUser_5 call DELETE deleteUser_4  
+call DELETE deleteUser_4 call DELETE deleteUser_5
+call DELETE deleteUser_5 call PUT updateUserActivity
+call PUT updateUserActivity call DELETE deleteUser_5
+call DELETE deleteUser_5 call createuser
+call createUser call DELETE deleteUser_5
+call DELETE deleteUser_5 call POST acceptInvite_4
+call POST acceptInvite_4 call DELETE deleteUser_5
+call DELETE deleteUser_5 call POST acceptInvite_5
+call POST acceptInvite_5 call DELETE deleteUser_5
+call DELETE deleteUser_5 call GET sendInvite
+call GET sendInvite call DELETE deleteUser_5
+call DELETE deleteUser_5 call DELETE deleteChats
+call DELETE deleteChats call DELETE deleteUser_5
+call DELETE deleteUser_4 call PUT updateUserActivity
+call PUT updateUserActivity call DELETE deleteUser_4
+call DELETE deleteUser_4 call createuser
+call createUser call DELETE deleteUser_4
+call DELETE deleteUser_4 call POST acceptInvite_4
+call POST acceptInvite_4 call DELETE deleteUser_4
+call DELETE deleteUser_4 call POST acceptInvite_5
+call POST acceptInvite_5 call DELETE deleteUser_4
+call DELETE deleteUser_4 call GET sendInvite
+call GET sendInvite call DELETE deleteUser_4
+call DELETE deleteUser_4 call DELETE deleteChats
+call DELETE deleteChats call DELETE deleteUser_4
+call PUT updateUserActivity call createuser
+call createUser call PUT updateUserActivity
+call PUT updateUserActivity call POST acceptInvite_4
+call POST acceptInvite_4 call PUT updateUserActivity
+call PUT updateUserActivity call POST acceptInvite_5
+call POST acceptInvite_5 call PUT updateUserActivity
+call PUT updateUserActivity call GET sendInvite
+call GET sendInvite call PUT updateUserActivity
+call PUT updateUserActivity call DELETE deleteChats
+call DELETE deleteChats call PUT updateUserActivity
+call createUser call POST acceptInvite_4
+call POST acceptInvite_4 call createUser
+call createUser call POST acceptInvite_5
+call POST acceptInvite_5 call createUser
+call createUser call GET sendInvite
+call GET sendInvite call createUser
+call createUser call DELETE deleteChats
+call DELETE deleteChats call createUser
+call POST acceptInvite_4 call POST acceptInvite_5
+call POST acceptInvite_5 call POST acceptInvite_4
+call POST acceptInvite_4 call GET sendInvite
+call GET sendInvite call POST acceptInvite_4
+call POST acceptInvite_4 call DELETE deleteChats
+call DELETE deleteChats call POST acceptInvite_4
+call POST acceptInvite_5 call GET sendInvite
+call GET sendInvite call POST acceptInvite_5
+call POST acceptInvite_5 call DELETE deleteChats
+call DELETE deleteChats call POST acceptInvite_5
+call GET sendInvite call DELETE deleteChats
+call DELETE deleteChats call GET sendInvite
+
+A6
+call POST createResource_0 call POST createResource_1
+call POST createResource_1 call POST createResource_0
+call DELETE deleteResource_0 call DELETE deleteResource_1
+call DELETE deleteResource_1 call DELETE deleteResource_0
+call DELETE deleteResource call POST createResource
+call POST createResource call DELETE deleteResource
+
+A6
+call POST deleteFormEntries_0 call POST deleteFormEntries_1 (checks entryTable)
+call POST deleteFormEntries_1 call POST deleteFormEntries_0 (checks entryTable)
+call POST deleteFormEntries_0 call POST deleteFormEntries_1 (checks formTable)
+call POST deleteFormEntries_1 call POST deleteFormEntries_0 (checks formTable)
+call POST handleFormEntry call_0 POST handleFormEntry_1 (checks entryTable)
+call POST handleFormEntry_1 call POST handleFormEntry_0 (checks entryTable)
+call POST handleFormEntry_0 call POST handleFormEntry_1 (checks formTable)
+call POST handleFormEntry_1 call POST handleFormEntry_0 (checks formTable)
+call POST updateFormSettings_0 call POST updateFormSettings_1
+call POST updateFormSettings_1 call POST updateFormSettings_0
+call POST handleFormEntry call POST deleteFormEntries (checks entryTable)
+call POST deleteFormEntries call POST handleFormEntry (checks entryTable)
+call POST handleFormEntry call POST deleteFormEntries (checks formTable)
+call POST deleteFormEntries call POST handleFormEntry (checks formTable)
+call POST updateFormSettings call POST deleteFormEntries
+call POST deleteFormEntries call POST updateFormSettings
+call POST updateFormSettings call POST deleteFormEntries 
+call POST deleteFormEntries  call POST updateFormSettings
+
+A7
+call POST uploadImage_0 call POST uploadImage_1
+call POST uploadImage_1 call POST uploadImage_0
+call GET getImage_0 call GET getImage_1
+call GET getImage_1 call GET getImage_0
+call resizeImage_0 call resizeImage_1
+call resizeImage_1 call resizeImage_0
+
+A8
+call POST http_0 call POST http_1
+call POST http_1 call POST http_0
+call processor_0 call processor_1 (checks SQS)
+call processor_1 call processor_0 (checks SQS)
+call processor_2 call processor_3 (checks S3bucket)
+call processor_3 call processor_2 (checks S3bucket)
+call s3_0 call s3_1
+call s3_1 call s3_0
+call s3_2 call s3_3
+call s3_3 call s3_2
+call processor call POST http
+call POST http call processor 
+call processor call s3_4
+call s3_4 call processor
+call processor call s3_5
+call s3_5 call processor
+call s3_5 call s3_4
+call s3_4 call s3_5
+
+A9
+call Backupchannel_0 call Backupchannel_1
+call Backupchannel_1 call Backupchannel_0
+
+A10
+call POST regist_0 call POST regist_1 
+call POST regist_1 call POST regist_0 
