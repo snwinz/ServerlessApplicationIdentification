@@ -77,7 +77,7 @@ call POST register
 call POST login
 call auth
 
-TCs: All-resource-relations. TCs finish!
+TCs: All-resource-relations
 A1
 call setup 
 call teardown
@@ -156,14 +156,13 @@ call POST login
 call auth
 
 
-TCs All-Resources-Def
+TCs: All-Resources-Def
 A1
 call teardown call GET getOpenIssues
 call teardown call GET getClosedIssiues
 call POST githubWebhookListener call GET getClosedIssiues
 call POST githubWebhookListener call
 call setup call GET getOpenIssues
-
 
 A2
 call POST CreateUser call GET GetMe
@@ -178,12 +177,10 @@ A4
 call POST sendMessage call GET getMessages
 call DELETE deleteUser call GET getMessages
 call DELETE deleteChats call GET getMessages
-
 call DELETE deleteUser call GET getChats
 call DELETE deleteChats call GET getChats
 call POST sendMessage call GET getChats
 call POST acceptInvite call GET getChats
-
 call DELETE deleteUser call GET getOnlineUser
 call PUT updateUserActivity GET getOnlineUser
 call createUser GET getOnlineUser
@@ -344,12 +341,10 @@ call Trigger-backup call Backupchannel
 call Backupchannel call Backupchannel (checks dynamotable)
 call Backupchannel call Backupchannel (checks queue)
 
-
 A10
 call POST register call Post login
 
-
-Hot Spots
+TCs: Hot Spots
 
 A1
 call setup_0 call setup_1 
