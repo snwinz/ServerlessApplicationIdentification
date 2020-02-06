@@ -1,5 +1,5 @@
 # ServerlessApplicationIdentification
-Data used for the paper can be found in [data](data).
+Data used for the paper can be found in [Data](Data).
 
 The application used for the identification is available in [ServerlessApplicationSearcher](ServerlessApplicationSearcher)
 
